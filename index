@@ -1,1 +1,108 @@
+<!DOCTYPE html>
 <html>
+<head>
+	<title>color mixer</title>
+	<meta charset="utf-8">
+	<meta name="description" content="simple color mixer to generate code for color">
+        <meta name="author" content="Abdull Maxwizard">
+  
+    <meta name="keywords" content="hexa-decimal and rgb color code" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+</head>
+<body>
+	<style type="text/css">
+		
+		#colorcode,#codecolor,#codecolor2,#colorcode2{width: 40vw;
+			height: 30vh;
+			margin-left: 2vw;
+			text-align: center;
+			font-size: 43px;
+
+			background: #456888;
+			border-radius: 22%;
+			display: inline;
+			color: white}
+			#colorcode{background: linear-gradient(to bottom right, red, blue,pink);
+				word-break: break-all;}
+			#colorcode2{background: linear-gradient(to bottom right, #459999, brown,green);}
+				#codecolor2{
+				background: rgb(234,22,102);}
+
+			button{margin-left: 15vw;
+		 margin-top: 3vh;
+		 font-size: 18px;
+		 width: 15vw;
+		 height: 5vh;
+		 border-radius: 30%;
+		 background: #a84562;
+		 margin-right: 17vw;
+		}
+		 h1{margin-left: 3vw;
+		 	font-size: 22px;
+		 	display: inline;}
+		 	#box{margin-left: 10vw;}
+		 	#codecolor{margin-left: 7vw;}
+		 	body{background: linear-gradient(to bottom right, red, yellow,pink);
+		 		color:#4533a2;
+		 		border: solid red 2px;
+		 		width: 100vw;
+		 		height: 100vh;
+		 	}
+		 	p{font-size: 34px;
+		 		text-align: center;}
+	</style>
+	<p>COLOR MIXER AND COLOR-CODE GENERATOR CAMP</p>
+	<h1>COLOR CODE GENERATOR</h1><h1 id="box">INPUT YOUR CODE IN THIS BOX</h1>
+<div >
+	
+	<input type="button" value="code color generator" id="colorcode" >
+	<input type="" value="#456888" id="codecolor"><br>
+<button onclick="colormix()" >generate code</button>
+<button onclick="codechecker()">check code's color</button>
+</div>
+<h1>RGB-COLOR CODE GENERATOR</h1><h1 id="box">INPUT YOUR CODE IN THIS BOX</h1>
+<div>
+<input type="button" value="rgb code color generator" id="colorcode2" >
+<input type="" value=rgb(234,22,190) id="codecolor2"><br>
+<button onclick="colormix2()" >generate code</button>
+<button onclick="codechecker2()">check code's color</button>
+</div>
+<script type="text/javascript">
+
+function colormix(){document.getElementById('colorcode').value="#";
+	var a=[1,2,3,4,5,6,7,"8",9,0,"a","b","c","d","e","f"];
+	for(var i=0;i<6;i++){
+		var colormix=Math.floor(Math.random()*16);
+		var e=a[colormix];
+		var code=document.getElementById('colorcode').value+=e;
+}
+document.getElementById('colorcode').value=code;
+document.getElementById('colorcode').style.background=code;}
+function codechecker(){
+	var colorcode=document.getElementById('codecolor').value;
+	document.getElementById("codecolor").style.background=colorcode;
+}
+function colormix2(){document.getElementById('colorcode2').value="rgb(";
+	var a=[];
+	for(var i=255;i>-1;i--){
+		a[i]=i;};
+		var u=[3,4];
+		var v=Math.floor(Math.random()*2);
+		for(var i=0;i<u[v];i++){
+			var colormix=Math.floor(Math.random()*256);
+		var e=a[colormix];
+		var code=document.getElementById('colorcode2').value+=e+",";}
+var len=eval(code.length-1);
+var nwcod=code.slice(0,len);
+document.getElementById('colorcode2').value=nwcod+")";
+document.getElementById('colorcode2').style.background=nwcod;}
+function codechecker2(){
+	var colorcode=document.getElementById('codecolor2').value;
+	document.getElementById("codecolor2").style.background=colorcode;
+}
+
+</script>
+
+</body>
+</html>
